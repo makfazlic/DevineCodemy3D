@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+
+  frontend:
+    image: registry.gitlab.com/usi-si-teaching/bachelor-inf/2022/software-atelier-4/2-pipelinepredators/frontend:dev
+    networks: [codeland-network]
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - /etc/letsencrypt/:/etc/letsencrypt/
+
+networks: 
+  codeland-network:
+    external: true
+    name: codeland-network
